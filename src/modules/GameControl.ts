@@ -2,6 +2,7 @@
  * 游戏控制器
  */
 
+import { eventNames } from 'process'
 import Food from './Food'
 import ScorePanel from './ScorePanel'
 import Snake from './Snake'
@@ -41,7 +42,14 @@ class GameControl {
     console.log(event.key)
 
     // 修改 direction 属性
-    this.direction = event.key
+    if (
+      event.key === 'ArrowUp' || event.key === 'Up' ||
+      event.key === 'ArrowDown' || event.key === 'Down' ||
+      event.key === 'ArrowLeft' || event.key === 'Left' ||
+      event.key === 'ArrowRight' || event.key === 'Right'
+    ) {
+      this.direction = event.key
+    }
 
   }
 
